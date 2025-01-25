@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    
+        
+      </head>
+      <body>
+        <form class="form" onsubmit="return validateForm()" autocomplete="off">
+            <div class="input-field">
+               <div class="name-field">
+                 <label for="name">Name</label>
+                 <input
+                   type="text"
+                   id="name"
+                   name="name"
+                   placeholder="Enter your name"
+                   maxlength="25"
+                   required
+                   />
+                </div>
+                <div class="email-field">
+                    <label for="email">Email</label>
+                     <input
+                     type="email"
+                     id="email"
+                     name="email"
+                     value="test@example.com"
+                     required
+                     />
+                 </div>
+                 <div class="password-field">
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      minlength="6"
+                      required
+                       />
+                   </div>
+              </div>
+        <div class="category-field">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="student">Student</option>
+            <option value="employee">Employee</option>
+            <option value="freelancer" selected>Freelancer</option>
+          </select>
+        </div>
+        <div class="event-field">
+          <label for="event-date">Event Date</label>
+          <input type="date" id="event-date" name="event-date" required />
+        </div>
+
+        <div class="ticket-field">
+          <label>Tickets</label>
+          
+            <input
+              type="radio"
+              id="ticket-1"
+              name="tickets"
+              value="1"
+              required
+            />
+            <label for="ticket-1">1 ticket</label>
+            
+            <input
+              type="radio"
+              id="ticket-2"
+              name="tickets"
+              value="2"
+              checked
+            />
+            <label for="ticket-2">2 tickets</label>
+            
+            <input type="radio" id="ticket-3" name="tickets" value="3" />
+            <label for="ticket-3">3 tickets</label>
+
+        </div>
+         <div class="payment-field">
+          <label for="payment">Payment</label>
+          
+            <input type="checkbox" id="payment" name="payment" />
+            <label for="payment">Online payment</label>
+          
+        </div>
+        <div class="notes-field">
+          <label for="notes">Notes</label>
+          <textarea
+            id="notes"
+            name="notes"
+            placeholder="Add additional notes..."
+          ></textarea>
+
+          <button type="submit">Submit</button>
+        </div>
+        </form>
+
+        <script>
+          
+          document.getElementById("email").focus();
+
+          
+          function validateForm() {
+            const name = document.getElementById("name");
+            const password = document.getElementById("password");
+
+            if (name.value.length > 25) {
+              alert("Name cannot exceed 25 characters.");
+              return false;
+            }
+
+            if (password.value.length < 6) {
+              alert("Password must be at least 6 characters long.");
+              return false;
+            }
+
+            return true;
+          }
+        </script>
+     
+  </body>
+</html>
